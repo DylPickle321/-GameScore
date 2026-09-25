@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameScore - Rate & Review Video Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 GameScore</h1>
+            <p>Rate and review your favorite video games</p>
+        </header>
+
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search games...">
+            <select id="genreFilter" class="genre-filter">
+                <option value="">All Genres</option>
+                <option value="Action">Action</option>
+                <option value="RPG">RPG</option>
+                <option value="Strategy">Strategy</option>
+                <option value="Puzzle">Puzzle</option>
+                <option value="Sports">Sports</option>
+                <option value="Indie">Indie</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Horror">Horror</option>
+                <option value="Other">Other</option>
+            </select>
+            <button id="addGameBtn" class="add-btn">+ Add Game</button>
+        </div>
+
+        <div id="noGames" class="no-games-message">
+            <p>No games yet. Click "Add Game" to get started! 🎯</p>
+        </div>
+
+        <div id="gamesContainer" class="games-grid"></div>
+    </div>
+
+    <div id="addGameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add a New Game</h2>
+            <form id="gameForm">
+                <div class="form-group">
+                    <label for="gameTitle">Game Title *</label>
+                    <input type="text" id="gameTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="gameGenre">Genre *</label>
+                    <select id="gameGenre" required>
+                        <option value="">Select a genre</option>
+                        <option value="Action">Action</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Strategy">Strategy</option>
+                        <option value="Puzzle">Puzzle</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Indie">Indie</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gameRating">Rating (1-10) *</label>
+                    <div class="star-rating-input" id="starRatingInput">
+                        <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span><span class="star" data-value="6">★</span><span class="star" data-value="7">★</span><span class="star" data-value="8">★</span><span class="star" data-value="9">★</span><span class="star" data-value="10">★</span>
+                    </div>
+                    <input type="hidden" id="gameRating" required>
+                    <div class="rating-display" id="ratingDisplay">No rating selected</div>
+                </div>
+                <div class="form-group">
+                    <label for="gameImage">Image URL (optional)</label>
+                    <input type="url" id="gameImage" placeholder="https://example.com/image.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="gameDescription">Description (optional)</label>
+                    <textarea id="gameDescription" rows="3" placeholder="Brief description..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="gameReview">Review (optional)</label>
+                    <textarea id="gameReview" rows="3" placeholder="Your thoughts on the game..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Add Game</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
